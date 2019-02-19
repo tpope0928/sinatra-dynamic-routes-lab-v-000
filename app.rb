@@ -13,6 +13,12 @@ class App < Sinatra::Base
 
   get '/say/:number/:phrase' do
     response = ' '
+
+    params[:number].to_i.times do
+      response += params[:phrase]
+    end
+
+    response
   end
 
 end
